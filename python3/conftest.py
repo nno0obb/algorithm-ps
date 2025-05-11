@@ -13,7 +13,8 @@ def get_test_cases(no):
 
 
 def pytest_generate_tests(metafunc):
-    no = metafunc.config.getoption("no")
-    if "no" in metafunc.fixturenames and no is not None:
-        cases = get_test_cases(no)
-        metafunc.parametrize("no, input, output", cases)
+    pno = metafunc.config.getoption("no")  # Problem No
+    if "no" in metafunc.fixturenames and pno is not None:
+        test_cases = get_test_cases(pno)
+        ids = [f"{pno}-#{tcno}" for tcno in range(1, len(test_cases) + 1)]
+        metafunc.parametrize("no, input, output", test_cases, ids=ids)

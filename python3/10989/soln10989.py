@@ -11,19 +11,16 @@ import sys
 def main():
     # Input
     N = int(sys.stdin.readline())
-    D = [0] * (10_000 + 1)
+    lst = [0] * (10_000 + 1)
     for _ in range(N):
         n = int(sys.stdin.readline())
 
         # Logic
-        D[n] += 1
+        lst[n] += 1
 
+    # Output
     for i in range(1, 10_000 + 1):
-        if D[i] == 0:
-            continue
-
-            # Output
-        for _ in range(D[i]):
+        for _ in range(lst[i]):
             print(i)
 
 

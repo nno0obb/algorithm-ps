@@ -1,7 +1,7 @@
 """
-# BOJ
+# 백준
 # No. 11653
-# Python 3.10.4
+# Python 3.11.11
 # by "nno0obb"
 # ver. slow
 """
@@ -24,5 +24,5 @@ def main():
             f += 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "algorithm-boj"
+version = "0.1.0"
+description = ""
+authors = ["nno0obb <nno0obb.kakao.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,7 +1,7 @@
 """
-# BOJ
+# 백준
 # No. 2869
-# Python 3.10.4
+# Python 3.11.11
 # by "nno0obb"
 """
 
@@ -17,5 +17,5 @@ def main():
     print(ans)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

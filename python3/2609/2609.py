@@ -1,7 +1,7 @@
 """
-# BOJ
+# 백준
 # No. 2609
-# Python 3.10.4
+# Python 3.11.11
 # by "nno0obb"
 """
 
@@ -23,11 +23,11 @@ def main():
     A, B = map(int, input().split())
 
     # Logic
-    ans = '\n'.join(map(str, [gcd(A, B), lcm(A, B)]))
+    ans = "\n".join(map(str, [gcd(A, B), lcm(A, B)]))
 
     # Output
     print(ans)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

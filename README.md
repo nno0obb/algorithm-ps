@@ -1,6 +1,6 @@
-# ps-python3
+# algorithm-boj
 
-## BOJ
+## Bookmark
 
 - 1000
 - 1001

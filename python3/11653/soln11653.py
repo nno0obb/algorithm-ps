@@ -12,8 +12,8 @@ def main():
 
     # Logic
     f = 2
-    while f * f <= N:
-        if N % f == 0:
+    while f * f <= N:  # <= sqrt(N)
+        if N % f == 0:  # f is a factor of N
             N //= f
 
             # Output
@@ -22,9 +22,9 @@ def main():
         else:
             f += 1
 
-            # Output
+    # Output
     if N > 1:
-        print(N)  # prime
+        print(N)  # N is prime number
 
 
 if __name__ == "__main__":

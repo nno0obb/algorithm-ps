@@ -6,6 +6,10 @@ from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
 
 ACCEPT = "text/html;"
+ACCEPT_ENCODING = "gzip, deflate, br"
+SEC_FETCH_DEST = "document"
+SEC_FETCH_MODE = "navigate"
+SEC_FETCH_SITE = "none"
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15"
 
 
@@ -24,7 +28,16 @@ def main():
             template = env.get_template("template.py.j2")
             f.write(template.render(no=pno))
 
-    headers = {"User-Agent": USER_AGENT, "Accept": ACCEPT}
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Accept": ACCEPT,
+        "Accept-Encoding": ACCEPT_ENCODING,
+        "Sec-Fetch-Dest": SEC_FETCH_DEST,
+        "Sec-Fetch-Mode": SEC_FETCH_MODE,
+        "Sec-Fetch-Site": SEC_FETCH_SITE,
+        "Referer": f"https://www.acmicpc.net/problem/{pno}",
+        "Priority": "u=0, i",
+    }
     response = requests.get(f"https://www.acmicpc.net/problem/{pno}", headers=headers)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, "html.parser")

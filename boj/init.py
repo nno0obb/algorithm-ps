@@ -5,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
 
+ACCEPT = "text/html;"
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15"
 
 
@@ -23,7 +24,8 @@ def main():
             template = env.get_template("template.py.j2")
             f.write(template.render(no=pno))
 
-    response = requests.get(f"https://www.acmicpc.net/problem/{pno}", headers={"User-Agent": USER_AGENT})
+    headers = {"User-Agent": USER_AGENT, "Accept": ACCEPT}
+    response = requests.get(f"https://www.acmicpc.net/problem/{pno}", headers=headers)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, "html.parser")
     for _, tag in enumerate(soup.find_all("pre")):

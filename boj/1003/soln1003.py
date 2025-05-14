@@ -14,8 +14,7 @@ def main():
     f7i[1] = [0, 1]
 
     for i in range(2, max_N + 1):
-        f7i[i][0] = f7i[i - 1][0] + f7i[i - 2][0]
-        f7i[i][1] = f7i[i - 1][1] + f7i[i - 2][1]
+        f7i[i] = [f7i[i - 1][0] + f7i[i - 2][0], f7i[i - 1][1] + f7i[i - 2][1]]
 
     # Input
     T = int(input())

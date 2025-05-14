@@ -2,7 +2,8 @@ from pathlib import Path
 
 
 def pytest_addoption(parser):
-    parser.addoption("--no", action="store", default=None, help="NO")
+    parser.addoption("--no", action="store", type=str, default=None, help="Problem No")
+    parser.addoption("--relative-error", action="store", type=str, default=None, help="Relative Error")
 
 
 def get_test_cases(no):

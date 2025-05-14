@@ -1,7 +1,7 @@
 """
 # 백준
 # No. 1037 
-# Python 3.11.11
+# Python 3.11.9
 # by "nno0obb"
 """
 

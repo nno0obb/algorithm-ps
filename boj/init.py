@@ -46,11 +46,11 @@ def main():
             if tag["id"].startswith("sample-input"):
                 tcno = tag["id"].split("-")[-1]  # TestCase No
                 with open(base / "inputs" / f"input{tcno}", "w", encoding="utf-8") as f:
-                    f.write(tag.text.strip())
+                    f.write(tag.text.strip("\n").strip("\r"))
             elif tag["id"].startswith("sample-output"):
                 tcno = tag["id"].split("-")[-1]  # TestCase No
                 with open(base / "outputs" / f"output{tcno}", "w", encoding="utf-8") as f:
-                    f.write(tag.text.strip())
+                    f.write(tag.text.strip("\n").strip("\r"))
 
 
 if __name__ == "__main__":

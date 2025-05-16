@@ -10,13 +10,13 @@ def main():
     # Input
 
     # Logic
-    cat = "\n".join(
-        [
-            r"\    /\ ".rstrip(),
-            r" )  ( ')",
-            r"(  /  )",
-            r" \(__)|",
-        ]
+    cat = r"""
+\    /\
+ )  ( ')
+(  /  )
+ \(__)|
+""".strip(
+        "\n"
     )
 
     # Output

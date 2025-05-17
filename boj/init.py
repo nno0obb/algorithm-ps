@@ -1,16 +1,13 @@
 import argparse
+import os
 from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
 from jinja2 import Environment, FileSystemLoader
 
-ACCEPT = "text/html;"
-ACCEPT_ENCODING = "gzip, deflate, br"
-SEC_FETCH_DEST = "document"
-SEC_FETCH_MODE = "navigate"
-SEC_FETCH_SITE = "none"
-USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.4 Safari/605.1.15"
+load_dotenv()
 
 
 def main():
@@ -19,37 +16,39 @@ def main():
     args = parser.parse_args()
     pno = args.no  # Problem No
 
-    base = Path(__file__).parent / str(pno)
-    (base / "inputs").mkdir(parents=True, exist_ok=True)
-    (base / "outputs").mkdir(parents=True, exist_ok=True)
-    if not (base / f"soln{pno}.py").exists():
-        with open(base / f"soln{pno}.py", "w", encoding="utf-8") as f:
+    base_path = Path(__file__).parent / str(pno)
+    base_path.mkdir(parents=True, exist_ok=True)
+    if not (base_path / f"soln{pno}.py").exists():
+        with open(base_path / f"soln{pno}.py", "w", encoding="utf-8") as f:
             env = Environment(loader=FileSystemLoader("."))
             template = env.get_template("template.py.j2")
             f.write(template.render(no=pno))
 
+    (base_path / "inputs").mkdir(parents=True, exist_ok=True)
+    (base_path / "outputs").mkdir(parents=True, exist_ok=True)
+    base_url = "https://acmicpc.net"
     headers = {
-        "User-Agent": USER_AGENT,
-        "Accept": ACCEPT,
-        "Accept-Encoding": ACCEPT_ENCODING,
-        "Sec-Fetch-Dest": SEC_FETCH_DEST,
-        "Sec-Fetch-Mode": SEC_FETCH_MODE,
-        "Sec-Fetch-Site": SEC_FETCH_SITE,
-        "Referer": f"https://www.acmicpc.net/problem/{pno}",
-        "Priority": "u=0, i",
+        "User-Agent": os.getenv("USER_AGENT"),
+        "Accept": os.getenv("ACCEPT"),
+        "Accept-Encoding": os.getenv("ACCEPT_ENCODING"),
+        "Sec-Fetch-Dest": os.getenv("SEC_FETCH_DEST"),
+        "Sec-Fetch-Mode": os.getenv("SEC_FETCH_MODE"),
+        "Sec-Fetch-Site": os.getenv("SEC_FETCH_SITE"),
+        "Priority": os.getenv("PRIORITY"),
+        "Referer": f"{base_url}/problem/{pno}",
     }
-    response = requests.get(f"https://www.acmicpc.net/problem/{pno}", headers=headers)
+    response = requests.get(f"{base_url}/problem/{pno}", headers=headers)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, "html.parser")
     for _, tag in enumerate(soup.find_all("pre")):
         if tag.has_attr("id"):
             if tag["id"].startswith("sample-input"):
                 tcno = tag["id"].split("-")[-1]  # TestCase No
-                with open(base / "inputs" / f"input{tcno}", "w", encoding="utf-8") as f:
+                with open(base_path / "inputs" / f"input{tcno}", "w", encoding="utf-8") as f:
                     f.write(tag.text.strip("\n").strip("\r"))
             elif tag["id"].startswith("sample-output"):
                 tcno = tag["id"].split("-")[-1]  # TestCase No
-                with open(base / "outputs" / f"output{tcno}", "w", encoding="utf-8") as f:
+                with open(base_path / "outputs" / f"output{tcno}", "w", encoding="utf-8") as f:
                     f.write(tag.text.strip("\n").strip("\r"))
 
 

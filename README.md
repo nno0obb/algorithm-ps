@@ -20,6 +20,13 @@ $ pytest runcase.py -v --no <NO>
 $ pytest runcase.py -v --no <NO> --relative-error "10**-2"
 ```
 
+## leetcode
+
+```shell
+$ cd leetcode
+$ pytest sol<NO>.py -v
+```
+
 # ETC
 
 ## boj

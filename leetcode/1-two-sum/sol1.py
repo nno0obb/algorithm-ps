@@ -1,7 +1,7 @@
 """
 # 리트코드
 # No. 1 / Two Sum
-# Python 3.11.9
+# Python 3.x.y
 # by "nno0obb"
 """
 

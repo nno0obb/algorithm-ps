@@ -1,7 +1,7 @@
 """
 # 리트코드
 # No. 125 / Valid Palindrome
-# Python 3.11.9
+# Python 3.x.y
 # by "nno0obb"
 """
 

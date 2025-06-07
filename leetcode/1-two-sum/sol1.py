@@ -17,8 +17,14 @@ class Solution:
 
 def test_solution(subtests):
     with subtests.test("Example 1"):
-        assert Solution().twoSum(nums=[2, 7, 11, 15], target=9) == [0, 1]
+        nums, target = [2, 7, 11, 15], 9
+        output = [0, 1]
+        assert Solution().twoSum(nums, target) == output
     with subtests.test("Example 2"):
-        assert Solution().twoSum(nums=[3, 2, 4], target=6) == [1, 2]
+        nums, target = [3, 2, 4], 6
+        output = [1, 2]
+        assert Solution().twoSum(nums, target) == output
     with subtests.test("Example 3"):
-        assert Solution().twoSum(nums=[3, 3], target=6) == [0, 1]
+        nums, target = [3, 3], 6
+        output = [0, 1]
+        assert Solution().twoSum(nums, target) == output

@@ -14,8 +14,14 @@ class Solution:
 
 def test_solution(subtests):
     with subtests.test("Example 1"):
-        assert Solution().isPalindrome(s="A man, a plan, a canal: Panama") is True
+        s = "A man, a plan, a canal: Panama"
+        output = True
+        assert Solution().isPalindrome(s) == output
     with subtests.test("Example 2"):
-        assert Solution().isPalindrome(s="race a car") is False
+        s = "race a car"
+        output = False
+        assert Solution().isPalindrome(s) == output
     with subtests.test("Example 3"):
-        assert Solution().isPalindrome(s=" ") is True
+        s = " "
+        output = True
+        assert Solution().isPalindrome(s) == output

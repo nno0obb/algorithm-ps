@@ -1,0 +1,6 @@
+[MESSAGES CONTROL]
+disable = invalid-name,unused-variable
+
+[BASIC]
+# Allow single-letter variable names (A, B, C, etc.)
+good-names = i,j,k,ex,Run,_,A,B,C,N,K 

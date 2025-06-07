@@ -1,5 +1,5 @@
 {
-    "python.linting.pylintArgs": [
+    "pylint.args": [
         "--disable=invalid-name,unused-variable"
     ]
 }

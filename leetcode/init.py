@@ -4,8 +4,8 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
 
-with open("data.json", "r", encoding="utf-8") as f:
-    data = json.load(f)
+with open("data.json", "r", encoding="utf-8") as g:
+    data = json.load(g)
 
 
 def main():

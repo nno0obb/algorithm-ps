@@ -1,14 +1,9 @@
 """
 # 백준
 # No. 1455
-# Python 3.11.9 (PyPy3..?)
+# Python 3.11.9
 # by "nno0obb"
 """
-
-import sys
-
-sys.setrecursionlimit(1_000_000)
-
 
 # Global Variables
 max_N, max_M = 100, 100

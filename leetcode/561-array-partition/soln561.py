@@ -17,7 +17,9 @@ class Solution:
 def test_solution(subtests):
     with subtests.test("Example 1"):
         nums = [1, 4, 3, 2]
-        assert Solution().arrayPairSum(nums) == 4
+        output = 4
+        assert Solution().arrayPairSum(nums) == output
     with subtests.test("Example 2"):
         nums = [6, 2, 6, 5, 1, 2]
-        assert Solution().arrayPairSum(nums) == 9
+        output = 9
+        assert Solution().arrayPairSum(nums) == output

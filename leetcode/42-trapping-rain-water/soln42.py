@@ -31,7 +31,9 @@ class Solution:
 def test_solution(subtests):
     with subtests.test("Example 1"):
         height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
-        assert Solution().trap(height) == 6
+        output = 6
+        assert Solution().trap(height) == output
     with subtests.test("Example 2"):
         height = [4, 2, 0, 3, 2, 5]
-        assert Solution().trap(height) == 9
+        output = 9
+        assert Solution().trap(height) == output

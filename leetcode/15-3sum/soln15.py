@@ -38,10 +38,13 @@ class Solution:
 def test_solution(subtests):
     with subtests.test("Example 1"):
         nums = [-1, 0, 1, 2, -1, -4]
-        assert Solution().threeSum(nums) == [[-1, -1, 2], [-1, 0, 1]]
+        output = [[-1, -1, 2], [-1, 0, 1]]
+        assert Solution().threeSum(nums) == output
     with subtests.test("Example 2"):
         nums = [0, 1, 1]
-        assert Solution().threeSum(nums) == []
+        output = []
+        assert Solution().threeSum(nums) == output
     with subtests.test("Example 3"):
         nums = [0, 0, 0]
-        assert Solution().threeSum(nums) == [[0, 0, 0]]
+        output = [[0, 0, 0]]
+        assert Solution().threeSum(nums) == output

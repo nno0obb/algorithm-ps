@@ -3,3 +3,6 @@
 
 # pytho3
 **/__pycache__/
+
+# Venv
+.*venv*/

@@ -16,8 +16,6 @@ class Solution:
             graph[src].append(dst)
 
         ans = []
-        # You must use all tickets once and only once
-        # => The answer is guaranteed.
 
         def dfs(curr: str):
             while graph[curr]:

@@ -43,10 +43,10 @@ def create_tree(values: List[int]) -> Optional[TreeNode]:
     que = [(root, 0)]
     while que:
         node, idx = que.pop(0)
-        if idx * 2 + 1 < len(values):
+        if idx * 2 + 1 < len(values) and values[idx * 2 + 1] is not None:
             node.left = TreeNode(values[idx * 2 + 1])
             que.append((node.left, idx * 2 + 1))
-        if idx * 2 + 2 < len(values):
+        if idx * 2 + 2 < len(values) and values[idx * 2 + 2] is not None:
             node.right = TreeNode(values[idx * 2 + 2])
             que.append((node.right, idx * 2 + 2))
     return root

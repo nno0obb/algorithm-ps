@@ -59,15 +59,15 @@ def create_tree(values: List[int]) -> Optional[TreeNode]:
 
 def test_solution(subtests):
     with subtests.test("Example 1"):
-        root = [1, 2, 3, 4, 5]
+        root, output = [1, 2, 3, 4, 5], 3
         root = create_tree(root)
-        assert Solution().diameterOfBinaryTree(root) == 3
+        assert Solution().diameterOfBinaryTree(root) == output
     with subtests.test("Example 2"):
-        root = [1, 2]
+        root, output = [1, 2], 1
         root = create_tree(root)
-        assert Solution().diameterOfBinaryTree(root) == 1
+        assert Solution().diameterOfBinaryTree(root) == output
     with subtests.test("Example 3"):
-        root = [
+        root, output = [
             4,
             -7,
             -3,
@@ -98,6 +98,6 @@ def test_solution(subtests):
             None,
             None,
             -2,
-        ]
+        ], 8
         root = create_tree(root)
-        assert Solution().diameterOfBinaryTree(root) == 8
+        assert Solution().diameterOfBinaryTree(root) == output

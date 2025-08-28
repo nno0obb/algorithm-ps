@@ -1,6 +1,6 @@
 """
 # 리트코드
-# No. 226 / invert-binary-tree
+# No. 617 / merge-two-binary-trees
 # Python 3.x.y
 # by "nno0obb"
 """
@@ -28,21 +28,14 @@ class TreeNode:
 
 
 class Solution:
-    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        if not root:
-            return None
-
-        def dfs(node: Optional[TreeNode]) -> None:
-            if not node:
-                return
-
-            dfs(node.left)
-            dfs(node.right)
-
-            node.left, node.right = node.right, node.left
-
-        dfs(root)
-        return root
+    def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
+        if root1 and root2:
+            node = TreeNode(root1.val + root2.val)
+            node.left = self.mergeTrees(root1.left, root2.left)
+            node.right = self.mergeTrees(root1.right, root2.right)
+            return node
+        else:
+            return root1 or root2
 
 
 def create_tree(values: List[int]) -> Optional[TreeNode]:
@@ -67,10 +60,14 @@ def create_tree(values: List[int]) -> Optional[TreeNode]:
 
 def test_solution(subtests):
     with subtests.test("Example 1"):
-        root, output = [4, 2, 7, 1, 3, 6, 9], [4, 7, 2, 9, 6, 3, 1]
-        root, output = create_tree(root), create_tree(output)
-        assert Solution().invertTree(root) == output
+        root1, root2 = [1, 3, 2, 5], [2, 1, 3, None, 4, None, 7]
+        root1, root2 = create_tree(root1), create_tree(root2)
+        output = [3, 4, 5, 5, 4, None, 7]
+        output = create_tree(output)
+        assert Solution().mergeTrees(root1, root2) == output
     with subtests.test("Example 2"):
-        root, output = [2, 1, 3], [2, 3, 1]
-        root, output = create_tree(root), create_tree(output)
-        assert Solution().invertTree(root) == output
+        root1, root2 = [1], [1, 2]
+        root1, root2 = create_tree(root1), create_tree(root2)
+        output = [2, 2]
+        output = create_tree(output)
+        assert Solution().mergeTrees(root1, root2) == output

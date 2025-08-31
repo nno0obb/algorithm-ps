@@ -8,6 +8,8 @@
 - [332. Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/description/)
 - [336. Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/description/)
 - [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/description/)
+- [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/description/)
+- [424. Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
 
 # Init
 

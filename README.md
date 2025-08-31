@@ -10,6 +10,7 @@
 - [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/description/)
 - [76. Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/description/)
 - [424. Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
+- [406. Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/description/)
 
 # Init
 

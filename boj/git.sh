@@ -2,9 +2,9 @@
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    --no=*)
-      NO=-"${1#*=}"
-      shift
+    --no)
+      NO="$2"
+      shift 2
       ;;
     *)
       shift

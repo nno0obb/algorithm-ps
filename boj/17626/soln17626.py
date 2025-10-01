@@ -5,7 +5,6 @@
 # by "nno0obb"
 """
 
-from itertools import product
 from math import sqrt
 
 

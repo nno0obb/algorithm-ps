@@ -27,11 +27,21 @@ $ python3 init.py --no <NO>
 
 ## boj
 
+### python
+
 ```shell
 $ cd boj
 $ cat <NO>/inputs/input1 | python3 <NO>/soln<NO>.py
 $ pytest runcase.py -v --no <NO>
 $ pytest runcase.py -v --no <NO> --relative-error "10**-2"
+```
+
+### go
+
+```shell
+$ cd boj
+$ cat <NO>/inputs/input1 | go run <NO>/soln<NO>.go
+$ go test -v -args -problem=<NO>
 ```
 
 ## leetcode

@@ -1,10 +1,16 @@
+/*
+// 백준
+// No. 2139
+// Go 1.24.8
+// by "nno0obb"
+*/
+
 package main
 
 import (
 	"bufio"
 	"fmt"
 	"os"
-	"testing"
 	"time"
 )
 
@@ -29,8 +35,4 @@ func main() {
 		// Output
 		fmt.Fprintln(writer, ans)
 	}
-}
-
-func test(t *testing.T) {
-
 }

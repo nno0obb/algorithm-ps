@@ -10,6 +10,8 @@ import (
 	"path/filepath"
 	"strings"
 	"testing"
+
+	"github.com/google/go-cmp/cmp"
 )
 
 var (
@@ -61,11 +63,15 @@ func TestProblem(t *testing.T) {
 			_ = cmd.Run()
 
 			res := strings.TrimRight(stdout.String(), "\n")
+			res = strings.ReplaceAll(res, "\r\n", "\n")
 			exp := strings.TrimRight(string(outputFile), "\n")
+			exp = strings.ReplaceAll(exp, "\r\n", "\n")
 
 			if res != exp {
 				t.Logf("\nwrong:\n%s", res)
 				t.Logf("\nanswer:\n%s", exp)
+				diff := cmp.Diff(res, exp)
+				t.Logf("\ndiff:\n%v", diff)
 				t.Fail()
 			}
 		})

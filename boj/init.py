@@ -23,11 +23,11 @@ def main():
             env = Environment(loader=FileSystemLoader("."))
             template = env.get_template("template.py.j2")
             f.write(template.render(no=pno))
-    if not (base_path / f"soln{pno}.go").exists():
-        with open(base_path / f"soln{pno}.go", "w", encoding="utf-8") as f:
-            env = Environment(loader=FileSystemLoader("."))
-            template = env.get_template("template.go.j2")
-            f.write(template.render(no=pno))
+    # if not (base_path / f"soln{pno}.go").exists():
+    #     with open(base_path / f"soln{pno}.go", "w", encoding="utf-8") as f:
+    #         env = Environment(loader=FileSystemLoader("."))
+    #         template = env.get_template("template.go.j2")
+    #         f.write(template.render(no=pno))
 
     (base_path / "inputs").mkdir(parents=True, exist_ok=True)
     (base_path / "outputs").mkdir(parents=True, exist_ok=True)

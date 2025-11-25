@@ -43,6 +43,7 @@ def main():
                 env = Environment(loader=FileSystemLoader("."))
                 template = env.get_template("template.md.j2")
                 g.write(template.render(no=pno, title=title, code=code))
+                g.write("\n")
 
 
 if __name__ == "__main__":

@@ -12,6 +12,11 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+if [ -z "$NO" ]; then
+  echo "Usage: bash git.sh --no <problem_number>"
+  exit 1
+fi
+
 REPO_ROOT_DIR=$(git rev-parse --show-toplevel)
 
 git add "$REPO_ROOT_DIR/boj/$NO"

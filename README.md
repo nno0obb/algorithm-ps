@@ -14,6 +14,10 @@
 - [621. Task Scheduler](https://leetcode.com/problems/task-scheduler/)
 - [134. Gas Station](https://leetcode.com/problems/gas-station/description/)
 
+## boj
+
+- [25918. 북극곰은 괄호를 찢어](https://www.acmicpc.net/problem/25918)
+
 # Init
 
 ## boj

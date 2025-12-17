@@ -17,6 +17,7 @@
 ## boj
 
 - [25918. 북극곰은 괄호를 찢어](https://www.acmicpc.net/problem/25918)
+- [22342. 계산 로봇](https://www.acmicpc.net/problem/22342)
 
 # Init
 

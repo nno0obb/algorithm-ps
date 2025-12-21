@@ -18,6 +18,7 @@
 
 - [25918. 북극곰은 괄호를 찢어](https://www.acmicpc.net/problem/25918)
 - [22342. 계산 로봇](https://www.acmicpc.net/problem/22342)
+- [9764. 서로 다른 자연수의 합](https://www.acmicpc.net/problem/9764)
 
 # Init
 

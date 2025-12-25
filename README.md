@@ -13,6 +13,7 @@
 - [406. Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/description/)
 - [621. Task Scheduler](https://leetcode.com/problems/task-scheduler/)
 - [134. Gas Station](https://leetcode.com/problems/gas-station/description/)
+- [1517. 버블 소트](https://www.acmicpc.net/problem/1517)
 
 ## boj
 

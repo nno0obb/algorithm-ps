@@ -35,7 +35,7 @@ def main():
     title = soup.find(id="problem_title").text.strip()
 
     boj_base = Path(__file__).parent / str(pno)
-    obsidian_base = Path.home() / "Obsidian" / "nno0obb" / "computer_science" / "algorithm" / "ps" / "boj"
+    obsidian_base = Path.home() / "Obsidian" / "nno0obb" / "computer_science" / "algorithm" / "problem_solving" / "boj"
     if (boj_base / f"soln{pno}.py").exists():
         with open(boj_base / f"soln{pno}.py", "r", encoding="utf-8") as f:
             with open(obsidian_base / f"{pno}.md", "w", encoding="utf-8") as g:

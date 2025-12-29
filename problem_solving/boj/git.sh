@@ -19,6 +19,6 @@ fi
 
 REPO_ROOT_DIR=$(git rev-parse --show-toplevel)
 
-git add "$REPO_ROOT_DIR/boj/$NO"
+git add "$REPO_ROOT_DIR/problem_solving/boj/$NO"
 git commit -m "boj/$NO"
 git push

@@ -14,6 +14,7 @@
 - [621. Task Scheduler](https://leetcode.com/problems/task-scheduler/)
 - [134. Gas Station](https://leetcode.com/problems/gas-station/description/)
 - [1517. 버블 소트](https://www.acmicpc.net/problem/1517)
+- [13023. ABCDE](https://www.acmicpc.net/problem/13023)
 
 ## boj
 

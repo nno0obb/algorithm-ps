@@ -16,6 +16,7 @@
 - [1517. 버블 소트](https://www.acmicpc.net/problem/1517)
 - [13023. ABCDE](https://www.acmicpc.net/problem/13023)
 - [4307. 개미](https://www.acmicpc.net/problem/4307)
+- [1300. K번째 수](https://www.acmicpc.net/problem/1300)
 
 ## boj
 
